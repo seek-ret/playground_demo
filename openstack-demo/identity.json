@@ -249,7 +249,7 @@
                                     "domain": {
                                         "properties": {
                                             "description": {
-                                                "type": "string"
+                                                "type": "number"
                                             },
                                             "enabled": {
                                                 "type": "boolean"
