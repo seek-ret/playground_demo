@@ -25,7 +25,7 @@ jobs:
         run: curl -L https://github.com/seek-ret/installation/releases/download/0.28.6/install-seekret-linux-x86_64.sh | sh
 
       - name: Log in to CLI
-        run: ~/.seekret/seekret init --client-id ${{ secrets.SEEKRET_CLIENT_ID }} --client-secret ${{ secrets.SEEKRET_CLIENT_SECRET }} -w dev
+        run: ~/.seekret/seekret init --client-id ${{ secrets.SEEKRET_CLIENT_ID }} --client-secret ${{ secrets.SEEKRET_CLIENT_SECRET }} -w staging
 
       - name: Report breaking changes
         if: ${{ github.event_name }} == 'pull_request'
