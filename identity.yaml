@@ -175,7 +175,7 @@ paths:
                                 domain:
                                     properties:
                                         description:
-                                            type: string
+                                            type: number
                                         enabled:
                                             type: boolean
                                         is_public:
