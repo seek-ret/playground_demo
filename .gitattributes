@@ -1,5 +1,5 @@
-openstack-demo/compute.yaml apispec=openapi service=compute
-openstack-demo/identity.yaml apispec=openapi service=identity
-openstack-demo/image.yaml apispec=openapi service=image
-openstack-demo/placement.yaml apispec=openapi service=placement
-openstack-demo/volume.yaml apispec=openapi service=volume
+openstack-demo/compute.json apispec=openapi service=compute
+openstack-demo/identity.json apispec=openapi service=identity
+openstack-demo/image.json apispec=openapi service=image
+openstack-demo/placement.json apispec=openapi service=placement
+openstack-demo/volume.json apispec=openapi service=volume
