@@ -1,0 +1,1387 @@
+components: {}
+externalDocs:
+    description: Powered by Seekret API Management
+    url: 'https://www.seekret.io'
+info:
+    contact:
+        email: support@seekret.com
+        url: 'https://www.seekret.io'
+    description: This OpenAPI3 file was automatically generated using Seekret Application©
+    license:
+        name: Apache 2.0
+    title: 'Kubecon_demo '
+    version: 1.0.0
+openapi: 3.0.0
+paths:
+    '/identity/v3/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/inherited_to_projects':
+        get:
+            operationId: '/identity/v3/OS-INHERIT/domains/{}/groups/{}/roles/inherited_to_projects_GET'
+            parameters:
+                - 
+                    in: path
+                    name: domain_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: group_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    links:
+                                        properties:
+                                            self:
+                                                format: url
+                                                type: string
+                                        required:
+                                            - self
+                                        type: object
+                                    roles:
+                                        items:
+                                            properties:
+                                                id:
+                                                    format: hex
+                                                    type: string
+                                                links:
+                                                    properties:
+                                                        self:
+                                                            format: url
+                                                            type: string
+                                                    required:
+                                                        - self
+                                                    type: object
+                                                name:
+                                                    format: lowercase
+                                                    type: string
+                                                options:
+                                                    type: object
+                                            required:
+                                                - id
+                                                - links
+                                                - name
+                                                - options
+                                            type: object
+                                        type: array
+                                required:
+                                    - links
+                                    - roles
+                                type: object
+                    description: OK
+            servers:
+                - 
+                    url: 10.128.0.8
+    '/identity/v3/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/inherited_to_projects':
+        get:
+            operationId: '/identity/v3/OS-INHERIT/domains/{}/users/{}/roles/inherited_to_projects_GET'
+            parameters:
+                - 
+                    in: path
+                    name: domain_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    links:
+                                        properties:
+                                            self:
+                                                format: url
+                                                type: string
+                                        required:
+                                            - self
+                                        type: object
+                                    roles:
+                                        items:
+                                            properties:
+                                                id:
+                                                    format: hex
+                                                    type: string
+                                                links:
+                                                    properties:
+                                                        self:
+                                                            format: url
+                                                            type: string
+                                                    required:
+                                                        - self
+                                                    type: object
+                                                name:
+                                                    format: lowercase
+                                                    type: string
+                                                options:
+                                                    type: object
+                                            required:
+                                                - id
+                                                - links
+                                                - name
+                                                - options
+                                            type: object
+                                        type: array
+                                required:
+                                    - links
+                                    - roles
+                                type: object
+                    description: OK
+            servers:
+                - 
+                    url: 10.128.0.8
+    /identity/v3/domains:
+        post:
+            operationId: /identity/v3/domains_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                domain:
+                                    properties:
+                                        description:
+                                            type: string
+                                        enabled:
+                                            type: boolean
+                                        is_public:
+                                            type: boolean
+                                        name:
+                                            type: string
+                                    required:
+                                        - name
+                                    type: object
+                            required:
+                                - domain
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    domain:
+                                        properties:
+                                            description:
+                                                type: string
+                                            enabled:
+                                                type: boolean
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                            tags:
+                                                items: {}
+                                                type: array
+                                        required:
+                                            - description
+                                            - enabled
+                                            - id
+                                            - links
+                                            - name
+                                            - options
+                                            - tags
+                                        type: object
+                                required:
+                                    - domain
+                                type: object
+                    description: Created
+                '400':
+                    description: Bad Request
+                '409':
+                    description: Conflict
+            servers:
+                - 
+                    url: 10.128.0.8
+    '/identity/v3/domains/{domain_id}/groups/{group_id}/roles/{roles_id}':
+        put:
+            operationId: '/identity/v3/domains/{}/groups/{}/roles/{}_PUT'
+            parameters:
+                - 
+                    in: path
+                    name: group_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: domain_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+            servers:
+                - 
+                    url: 10.128.0.8
+    '/identity/v3/domains/{domain_id}/users/{user_id}/roles/{roles_id}':
+        put:
+            operationId: '/identity/v3/domains/{}/users/{}/roles/{}_PUT'
+            parameters:
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: domain_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+            servers:
+                - 
+                    url: 10.128.0.8
+    /identity/v3/groups:
+        post:
+            operationId: /identity/v3/groups_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                group:
+                                    properties:
+                                        description:
+                                            type: string
+                                        domain_id:
+                                            format: hex
+                                            type: string
+                                        name:
+                                            type: string
+                                        project_id:
+                                            format: hex
+                                            type: string
+                                    required:
+                                        - domain_id
+                                        - name
+                                    type: object
+                            required:
+                                - group
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    group:
+                                        properties:
+                                            description:
+                                                type: string
+                                            domain_id:
+                                                format: hex
+                                                type: string
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            project_id:
+                                                format: hex
+                                                type: string
+                                        required:
+                                            - description
+                                            - domain_id
+                                            - id
+                                            - links
+                                            - name
+                                        type: object
+                                required:
+                                    - group
+                                type: object
+                    description: Created
+            servers:
+                - 
+                    url: 10.128.0.8
+    '/identity/v3/groups/{group_id}':
+        delete:
+            operationId: '/identity/v3/groups/{}_DELETE'
+            parameters:
+                - 
+                    in: path
+                    name: group_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+                '404':
+                    description: Not Found
+            servers:
+                - 
+                    url: 10.128.0.8
+    /identity/v3/projects:
+        post:
+            operationId: /identity/v3/projects_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                project:
+                                    properties:
+                                        description:
+                                            type: string
+                                        domain_id:
+                                            enum:
+                                                - default
+                                            type: string
+                                        enabled:
+                                            type: boolean
+                                        is_domain:
+                                            type: boolean
+                                        name:
+                                            type: string
+                                        parent_id:
+                                            format: hex
+                                            type: string
+                                        tags:
+                                            items:
+                                                type: string
+                                            type: array
+                                    required:
+                                        - name
+                                    type: object
+                            required:
+                                - project
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    project:
+                                        properties:
+                                            description:
+                                                type: string
+                                            domain_id:
+                                                enum:
+                                                    - default
+                                                type: string
+                                            enabled:
+                                                type: boolean
+                                            id:
+                                                format: hex
+                                                type: string
+                                            is_domain:
+                                                type: boolean
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                            parent_id:
+                                                enum:
+                                                    - default
+                                                type: string
+                                            tags:
+                                                items:
+                                                    type: string
+                                                type: array
+                                        required:
+                                            - description
+                                            - enabled
+                                            - id
+                                            - is_domain
+                                            - links
+                                            - name
+                                            - options
+                                            - tags
+                                        type: object
+                                required:
+                                    - project
+                                type: object
+                    description: Created
+                '400':
+                    description: Bad Request
+                '403':
+                    description: Forbidden
+                '409':
+                    description: Conflict
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - Infra-team
+    '/identity/v3/projects/{project_id}/groups/{group_id}/roles/{roles_id}':
+        put:
+            operationId: '/identity/v3/projects/{}/groups/{}/roles/{}_PUT'
+            parameters:
+                - 
+                    in: path
+                    name: project_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: group_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - Infra-team
+    '/identity/v3/projects/{project_id}/users/{user_id}/roles/{roles_id}':
+        put:
+            operationId: '/identity/v3/projects/{}/users/{}/roles/{}_PUT'
+            parameters:
+                - 
+                    in: path
+                    name: project_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - Infra-team
+    /identity/v3/regions:
+        post:
+            operationId: /identity/v3/regions_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                region:
+                                    properties:
+                                        description:
+                                            type: string
+                                        parent_region_id:
+                                            format: hex
+                                            type: string
+                                    required:
+                                        - description
+                                    type: object
+                            required:
+                                - region
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    region:
+                                        properties:
+                                            description:
+                                                type: string
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            parent_region_id:
+                                                format: hex
+                                                type: string
+                                        required:
+                                            - description
+                                            - id
+                                            - links
+                                        type: object
+                                required:
+                                    - region
+                                type: object
+                    description: Created
+            servers:
+                - 
+                    url: 10.128.0.8
+    '/identity/v3/regions/{parent_region_id}':
+        delete:
+            operationId: '/identity/v3/regions/{}_DELETE'
+            parameters:
+                - 
+                    in: path
+                    name: parent_region_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+                '404':
+                    description: Not Found
+            servers:
+                - 
+                    url: 10.128.0.8
+    /identity/v3/role_assignments:
+        get:
+            operationId: /identity/v3/role_assignments_GET
+            parameters:
+                - 
+                    in: query
+                    name: effective
+                    required: true
+                    schema:
+                        type: string
+                - 
+                    in: query
+                    name: scope.project.id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: query
+                    name: user.id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    links:
+                                        properties:
+                                            self:
+                                                format: url
+                                                type: string
+                                        required:
+                                            - self
+                                        type: object
+                                    role_assignments:
+                                        items:
+                                            properties:
+                                                links:
+                                                    properties:
+                                                        assignment:
+                                                            format: url
+                                                            type: string
+                                                        prior_role:
+                                                            format: url
+                                                            type: string
+                                                    required:
+                                                        - assignment
+                                                    type: object
+                                                role:
+                                                    properties:
+                                                        id:
+                                                            format: hex
+                                                            type: string
+                                                    required:
+                                                        - id
+                                                    type: object
+                                                scope:
+                                                    properties:
+                                                        'OS-INHERIT:inherited_to':
+                                                            enum:
+                                                                - projects
+                                                            type: string
+                                                        project:
+                                                            properties:
+                                                                id:
+                                                                    format: hex
+                                                                    type: string
+                                                            required:
+                                                                - id
+                                                            type: object
+                                                    required:
+                                                        - project
+                                                    type: object
+                                                user:
+                                                    properties:
+                                                        id:
+                                                            format: hex
+                                                            type: string
+                                                    required:
+                                                        - id
+                                                    type: object
+                                            required:
+                                                - links
+                                                - role
+                                                - scope
+                                                - user
+                                            type: object
+                                        type: array
+                                required:
+                                    - links
+                                    - role_assignments
+                                type: object
+                    description: OK
+            servers:
+                - 
+                    url: 10.128.0.8
+    /identity/v3/roles:
+        get:
+            operationId: /identity/v3/roles_GET
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+                - 
+                    in: query
+                    name: domain_id
+                    schema:
+                        format: hex
+                        type: string
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    links:
+                                        properties:
+                                            self:
+                                                format: url
+                                                type: string
+                                        required:
+                                            - self
+                                        type: object
+                                    roles:
+                                        items:
+                                            properties:
+                                                domain_id:
+                                                    format: hex
+                                                    type: string
+                                                id:
+                                                    format: hex
+                                                    type: string
+                                                links:
+                                                    properties:
+                                                        self:
+                                                            format: url
+                                                            type: string
+                                                    required:
+                                                        - self
+                                                    type: object
+                                                name:
+                                                    type: string
+                                                options:
+                                                    properties:
+                                                        immutable:
+                                                            type: boolean
+                                                    type: object
+                                            required:
+                                                - id
+                                                - links
+                                                - name
+                                                - options
+                                            type: object
+                                        type: array
+                                required:
+                                    - links
+                                    - roles
+                                type: object
+                    description: OK
+            tags:
+                - Infra-team
+        post:
+            operationId: /identity/v3/roles_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                role:
+                                    properties:
+                                        domain_id:
+                                            format: hex
+                                            type: string
+                                        name:
+                                            type: string
+                                    required:
+                                        - name
+                                    type: object
+                            required:
+                                - role
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    role:
+                                        properties:
+                                            domain_id:
+                                                format: hex
+                                                type: string
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                        required:
+                                            - id
+                                            - links
+                                            - name
+                                            - options
+                                        type: object
+                                required:
+                                    - role
+                                type: object
+                    description: Created
+            tags:
+                - Infra-team
+        servers:
+            - 
+                url: 10.128.0.8
+    '/identity/v3/roles/{roles_id}':
+        delete:
+            operationId: '/identity/v3/roles/{}_DELETE'
+            parameters:
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+                '404':
+                    description: Not Found
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - Infra-team
+    '/identity/v3/roles/{roles_id}/implies/{roles_id1}':
+        put:
+            operationId: '/identity/v3/roles/{}/implies/{}_PUT'
+            parameters:
+                - 
+                    in: path
+                    name: roles_id1
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: path
+                    name: roles_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    links:
+                                        properties:
+                                            self:
+                                                format: url
+                                                type: string
+                                        required:
+                                            - self
+                                        type: object
+                                    role_inference:
+                                        properties:
+                                            implies:
+                                                properties:
+                                                    id:
+                                                        format: hex
+                                                        type: string
+                                                    links:
+                                                        properties:
+                                                            self:
+                                                                format: url
+                                                                type: string
+                                                        required:
+                                                            - self
+                                                        type: object
+                                                    name:
+                                                        type: string
+                                                required:
+                                                    - id
+                                                    - links
+                                                    - name
+                                                type: object
+                                            prior_role:
+                                                properties:
+                                                    id:
+                                                        format: hex
+                                                        type: string
+                                                    links:
+                                                        properties:
+                                                            self:
+                                                                format: url
+                                                                type: string
+                                                        required:
+                                                            - self
+                                                        type: object
+                                                    name:
+                                                        type: string
+                                                required:
+                                                    - id
+                                                    - links
+                                                    - name
+                                                type: object
+                                        required:
+                                            - implies
+                                            - prior_role
+                                        type: object
+                                required:
+                                    - links
+                                    - role_inference
+                                type: object
+                    description: Created
+                '403':
+                    description: Forbidden
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - Infra-team
+    /identity/v3/users:
+        post:
+            operationId: /identity/v3/users_POST
+            parameters:
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+                - 
+                    in: header
+                    name: CorrelationID
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                user:
+                                    properties:
+                                        default_project_id:
+                                            description: Default project to associate with the user
+                                            format: hex
+                                            type: string
+                                        description:
+                                            example: regular user
+                                            type: string
+                                        domain_id:
+                                            format: hex
+                                            type: string
+                                        email:
+                                            format: email (rfc-5322-email)
+                                            type: string
+                                            x-seekret-tag:
+                                                - PII data
+                                        enabled:
+                                            type: boolean
+                                        name:
+                                            type: string
+                                        password:
+                                            type: string
+                                            x-seekret-tag:
+                                                - PII data
+                                        project_id:
+                                            format: hex
+                                            type: string
+                                    required:
+                                        - name
+                                        - password
+                                    type: object
+                            required:
+                                - user
+                            type: object
+                required: true
+            responses:
+                '201':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    user:
+                                        properties:
+                                            default_project_id:
+                                                format: hex
+                                                type: string
+                                            description:
+                                                type: string
+                                            domain_id:
+                                                enum:
+                                                    - default
+                                                type: string
+                                            email:
+                                                format: email (rfc-5322-email)
+                                                type: string
+                                            enabled:
+                                                type: boolean
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                            project_id:
+                                                format: hex
+                                                type: string
+                                        required:
+                                            - domain_id
+                                            - enabled
+                                            - id
+                                            - links
+                                            - name
+                                            - options
+                                        type: object
+                                required:
+                                    - user
+                                type: object
+                    description: Created
+                '404':
+                    description: Not Found
+            servers:
+                - 
+                    url: 10.128.0.8
+            tags:
+                - PII
+    '/identity/v3/users/{user_id}':
+        delete:
+            operationId: '/identity/v3/users/{}_DELETE'
+            parameters:
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '204':
+                    description: No Content
+                '404':
+                    description: Not Found
+        get:
+            operationId: '/identity/v3/users/{}_GET'
+            parameters:
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    user:
+                                        properties:
+                                            description:
+                                                type: string
+                                            domain_id:
+                                                type: string
+                                            email:
+                                                format: email (rfc-5322-email)
+                                                type: string
+                                            enabled:
+                                                type: boolean
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                            project_id:
+                                                format: hex
+                                                type: string
+                                        required:
+                                            - domain_id
+                                            - email
+                                            - enabled
+                                            - id
+                                            - links
+                                            - name
+                                            - options
+                                        type: object
+                                required:
+                                    - user
+                                type: object
+                    description: OK
+                '404':
+                    description: Not Found
+        patch:
+            operationId: '/identity/v3/users/{}_PATCH'
+            parameters:
+                - 
+                    in: path
+                    name: user_id
+                    required: true
+                    schema:
+                        format: hex
+                        type: string
+                - 
+                    in: header
+                    name: X-Auth-Token
+                    required: true
+                    schema:
+                        type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            properties:
+                                user:
+                                    properties:
+                                        description:
+                                            type: string
+                                        email:
+                                            format: email (rfc-5322-email)
+                                            type: string
+                                        enabled:
+                                            type: boolean
+                                        id:
+                                            format: hex
+                                            type: string
+                                        name:
+                                            type: string
+                                        password:
+                                            type: string
+                                        project_id:
+                                            format: hex
+                                            type: string
+                                    required:
+                                        - id
+                                    type: object
+                            required:
+                                - user
+                            type: object
+                required: true
+            responses:
+                '200':
+                    content:
+                        application/json:
+                            schema:
+                                properties:
+                                    user:
+                                        properties:
+                                            description:
+                                                type: string
+                                            domain_id:
+                                                enum:
+                                                    - default
+                                                type: string
+                                            email:
+                                                format: email (rfc-5322-email)
+                                                type: string
+                                            enabled:
+                                                type: boolean
+                                            extra:
+                                                properties:
+                                                    description:
+                                                        type: string
+                                                    email:
+                                                        format: email (rfc-5322-email)
+                                                        type: string
+                                                    project_id:
+                                                        format: hex
+                                                        type: string
+                                                required:
+                                                    - email
+                                                    - project_id
+                                                type: object
+                                            id:
+                                                format: hex
+                                                type: string
+                                            links:
+                                                properties:
+                                                    self:
+                                                        format: url
+                                                        type: string
+                                                required:
+                                                    - self
+                                                type: object
+                                            name:
+                                                type: string
+                                            options:
+                                                type: object
+                                            project_id:
+                                                format: hex
+                                                type: string
+                                        required:
+                                            - domain_id
+                                            - email
+                                            - enabled
+                                            - extra
+                                            - id
+                                            - links
+                                            - name
+                                            - options
+                                            - project_id
+                                        type: object
+                                required:
+                                    - user
+                                type: object
+                    description: OK
+        servers:
+            - 
+                url: 10.128.0.8
+tags:
+    - 
+        description: This OpenAPI3 file was automatically generated using Seekret Application©
+        externalDocs:
+            description: Powered by Seekret API Management
+            url: 'https://www.seekret.io'
+        name: generated-by-seekret
