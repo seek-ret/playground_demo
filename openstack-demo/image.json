@@ -525,6 +525,7 @@
                                         "type": "string"
                                     }
                                 },
+                                "required": ["image_state"],
                                 "type": "object"
                             }
                         }
