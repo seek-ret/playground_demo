@@ -1,0 +1,806 @@
+components: {}
+externalDocs:
+  description: Powered by Seekret API Management
+  url: 'https://www.seekret.io'
+info:
+  contact:
+    email: support@seekret.com
+    url: 'https://www.seekret.io'
+  description: This OpenAPI3 file was automatically generated using Seekret Application©
+  license:
+    name: Apache 2.0
+  title: 'Kubecon_demo '
+  version: 1.0.0
+openapi: 3.0.0
+paths:
+  /placement/allocations:
+    post:
+      operationId: /placement/allocations_POST
+      parameters:
+        - in: header
+          name: X-Openstack-Request-Id
+          required: true
+          schema:
+            type: number
+        - in: header
+          name: X-Auth-Token
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                08a0afbd-b730-4558-b95d-9833fbbfd7f6:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                144c5405-81c1-4181-b4ed-17ea83c618e0:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                26fdcdc0-3c25-48b6-9464-e7f07bb5c9d7:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                3d47655d-2c5e-44c1-a5a2-b0206266ef9a:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                54d29367-a2f1-4cc6-b7db-2cbe2aea559b:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                672609fe-23a4-4d05-b082-300ca8811faf:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                6b08774a-0d48-4b02-b760-d6c9a53e1b6e:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                702f26ce-9590-4334-b202-d45418a4a29a:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                73ee3dd6-b6fd-4e0b-bc39-abaabc6b31ef:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                7cf1a050-3ec0-490c-ac58-9c607ed8496e:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                7e13e96e-e7c4-42b8-93ce-33988e574d4a:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                80fef6be-2d17-4313-ad01-d878588b85b5:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                8f921ccc-6883-41dc-be19-9639b8b59bff:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                91a0b7eb-2f03-436b-84e1-9866ba7cef9f:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                98be61fd-d92a-43e0-81c1-5868f9b3e68f:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                9e5785a9-292b-4699-9277-0e29d7bbe29e:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                abbc5258-1694-4372-94a8-f97e11370a8e:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                d9b4a975-1c91-4073-bf15-1c8fd079ba75:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                e2d4f7bc-c402-4eb3-983f-eb643a795c1c:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                f3607163-cb4d-452f-b747-801cda4e3bae:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+                f9f6e41d-c2ab-43c6-bdcc-c6041f849620:
+                  properties:
+                    allocations:
+                      type: object
+                    consumer_generation:
+                      format: int64
+                      type: integer
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - consumer_generation
+                    - project_id
+                    - user_id
+                  type: object
+                ffbf3735-a545-4dc7-9659-746362270b73:
+                  properties:
+                    allocations:
+                      properties:
+                        4c2ba5a6-ec58-4dc5-9587-29bc118667ab:
+                          properties:
+                            generation:
+                              format: int64
+                              type: integer
+                            resources:
+                              properties:
+                                DISK_GB:
+                                  format: int64
+                                  type: integer
+                                MEMORY_MB:
+                                  format: int64
+                                  type: integer
+                                VCPU:
+                                  format: int64
+                                  type: integer
+                              required:
+                                - DISK_GB
+                                - MEMORY_MB
+                                - VCPU
+                              type: object
+                          required:
+                            - generation
+                            - resources
+                          type: object
+                      required:
+                        - 4c2ba5a6-ec58-4dc5-9587-29bc118667ab
+                      type: object
+                    project_id:
+                      format: hex
+                      type: string
+                    user_id:
+                      format: hex
+                      type: string
+                  required:
+                    - allocations
+                    - project_id
+                    - user_id
+                  type: object
+              type: object
+        required: true
+      responses:
+        '204':
+          description: No Content
+      servers:
+        - url: 10.128.0.8
+tags:
+  - description: This OpenAPI3 file was automatically generated using Seekret Application©
+    externalDocs:
+      description: Powered by Seekret API Management
+      url: 'https://www.seekret.io'
+    name: generated-by-seekret
