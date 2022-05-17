@@ -378,6 +378,8 @@ paths:
                                     enum:
                                         - private
                                     type: string
+                            required:
+                                - image_state
                             type: object
                 required: true
             responses:
